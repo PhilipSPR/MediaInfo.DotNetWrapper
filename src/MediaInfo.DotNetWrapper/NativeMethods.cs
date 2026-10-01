@@ -52,9 +52,11 @@ namespace MediaInfo.DotNetWrapper
                 return;
             }
 
-            string[] candidates = new string[2];
-            candidates[0] = Path.Combine(Path.Combine(root, arch), "MediaInfo.dll");
-            candidates[1] = Path.Combine(root, "MediaInfo.dll");
+			var candidates = new[]
+			{
+				Path.Combine(Path.Combine(root, arch), "MediaInfo.dll"),
+				Path.Combine(root, "MediaInfo.dll")
+			};
 
             for (int i = 0; i < candidates.Length; i++)
             {
